@@ -2,13 +2,13 @@ body {
   margin: 70px auto;
   max-width: 500px;
   font-family: "Rajdhani";
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 }
 div.container {
   max-width: 500px;
   border: solid 1px none;
   border-radius: 10px;
   padding: 30px;
-  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 }
 div.current {
   text-align: center;

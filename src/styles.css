@@ -8,6 +8,7 @@ div.container {
   border: solid 1px none;
   border-radius: 10px;
   padding-top: 30px;
+  padding-bottom: 20px;
   background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 }
 div.current {

@@ -84,7 +84,7 @@ function displayWeather(response) {
   minTemp.innerHTML = `${Math.round(response.data.main.temp_min)}°C`;
 
   let visibility = document.querySelector("#visibility");
-  visibility.innerHTML = `${response.data.visibility / 1000}km`;
+  visibility.innerHTML = `${Math.round(response.data.visibility / 1000)}km`;
 
   let timezone = response.data.timezone * 1000;
   let utcSunrise = response.data.sys.sunrise * 1000;

@@ -67,8 +67,10 @@ function formatHours(timestamp) {
 function displayWeather(response) {
   console.log(response.data);
   // console.log(response.data.sys.country);
+  celciusTemp = response.data.main.temp;
+
   let displayTemp = document.querySelector(".temperature");
-  displayTemp.innerHTML = Math.round(response.data.main.temp);
+  displayTemp.innerHTML = Math.round(celciusTemp);
 
   let description = document.querySelector(".description");
   description.innerHTML = `${response.data.weather[0].description}`;
@@ -129,6 +131,26 @@ function handleCitySubmit(event) {
   let cityInput = document.querySelector("#city-input").value;
   cityOnload(cityInput);
 }
+// Temperature conversion
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  let fTemp = (celciusTemp * 9) / 5 + 32;
+  let temperatureElement = document.querySelector(".temperature");
+  temperatureElement.innerHTML = Math.round(fTemp);
+}
+function displayCelciusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector(".temperature");
+  temperatureElement.innerHTML = Math.round(celciusTemp);
+}
+
+let celciusTemp = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", displayCelciusTemp);
 
 let searchBar = document.querySelector("#search-form");
 searchBar.addEventListener("submit", handleCitySubmit);

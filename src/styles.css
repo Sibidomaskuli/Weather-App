@@ -17,7 +17,8 @@ div.current {
 }
 img {
   position: relative;
-  bottom: 6px;
+  bottom: 26px;
+  width: 8rem;
 }
 div.current h1 {
   margin-top: 20px;
@@ -64,13 +65,13 @@ div.footer p {
   opacity: 0.7;
 }
 .temperature {
-  font-size: 48px;
+  font-size: 7rem;
   margin-right: 6px;
   text-transform: capitalize;
 }
 .degree {
-  font-size: 20px;
+  font-size: 2rem;
   position: relative;
-  bottom: 20px;
+  bottom: 49px;
   right: 15px;
 }

@@ -66,11 +66,14 @@ function formatHours(timestamp) {
 
 function displayWeather(response) {
   console.log(response.data);
-  // console.log(response.data.sys.country);
+
   celciusTemp = response.data.main.temp;
 
   let displayTemp = document.querySelector(".temperature");
   displayTemp.innerHTML = Math.round(celciusTemp);
+
+  let pressure = document.querySelector("#pressure");
+  pressure.innerHTML = `${response.data.main.pressure}`;
 
   let description = document.querySelector(".description");
   description.innerHTML = `${response.data.weather[0].description}`;
@@ -78,8 +81,10 @@ function displayWeather(response) {
   let displayCity = document.querySelector("#city-display");
   displayCity.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
 
+  feels = response.data.main.feels_like;
+
   let feelsLike = document.querySelector("#feels-like");
-  feelsLike.innerHTML = `${Math.round(response.data.main.feels_like)}°C`;
+  feelsLike.innerHTML = `${Math.round(feels)}`;
 
   let windSpeed = document.querySelector("#wind-speed");
   windSpeed.innerHTML = `${Math.round(response.data.wind.speed * 3.6)}km/h`;
@@ -87,11 +92,15 @@ function displayWeather(response) {
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `${response.data.main.humidity}%`;
 
+  max = response.data.main.temp_max;
+
   let maxTemp = document.querySelector("#max-temp");
-  maxTemp.innerHTML = `${Math.round(response.data.main.temp_max)}°C`;
+  maxTemp.innerHTML = `${Math.round(max)}`;
+
+  min = response.data.main.temp_min;
 
   let minTemp = document.querySelector("#min-temp");
-  minTemp.innerHTML = `${Math.round(response.data.main.temp_min)}°C`;
+  minTemp.innerHTML = `${Math.round(response.data.main.temp_min)}`;
 
   let visibility = document.querySelector("#visibility");
   visibility.innerHTML = `${(response.data.visibility / 1000).toFixed(1)}km`;
@@ -137,14 +146,46 @@ function displayFahrenheitTemp(event) {
   let fTemp = (celciusTemp * 9) / 5 + 32;
   let temperatureElement = document.querySelector(".temperature");
   temperatureElement.innerHTML = Math.round(fTemp);
+
+  let feelsLikeTemp = (feels * 9) / 5 + 32;
+  let feelsLikeElement = document.querySelector("#feels-like");
+  feelsLikeElement.innerHTML = Math.round(feelsLikeTemp);
+
+  let maxTemp = (max * 9) / 5 + 32;
+  let maxElement = document.querySelector("#max-temp");
+  maxElement.innerHTML = Math.round(maxTemp);
+
+  let minTemp = (min * 9) / 5 + 32;
+  let minElement = document.querySelector("#min-temp");
+  minElement.innerHTML = Math.round(minTemp);
+
+  // change the active class
+  celciusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
 }
 function displayCelciusTemp(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector(".temperature");
   temperatureElement.innerHTML = Math.round(celciusTemp);
-}
 
+  let feelsLikeElement = document.querySelector("#feels-like");
+  feelsLikeElement.innerHTML = Math.round(feels);
+
+  let maxElement = document.querySelector("#max-temp");
+  maxElement.innerHTML = Math.round(max);
+
+  let minElement = document.querySelector("#min-temp");
+  minElement.innerHTML = Math.round(min);
+
+  // change the active class
+  celciusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+}
+// global var for temp conversion
 let celciusTemp = null;
+let feels = null;
+let max = null;
+let min = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemp);

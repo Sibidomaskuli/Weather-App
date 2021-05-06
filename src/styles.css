@@ -49,11 +49,15 @@ div.footer p {
 #celcius-link,
 #fahrenheit-link {
   text-decoration: none;
-  color: #000;
+  /* color: #000; */
 }
 
 #city-display {
   font-size: 38px;
+}
+.feelslike {
+  color: #48484a;
+  font-size: 26px;
 }
 .description {
   color: #48484a;
@@ -76,4 +80,8 @@ div.footer p {
   position: relative;
   bottom: 49px;
   right: 15px;
+}
+.degree .active {
+  cursor: default;
+  color: #000;
 }

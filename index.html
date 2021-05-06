@@ -62,20 +62,22 @@
             >19</span
           >
           <span class="degree" id="units">
-            <a href="#" id="celcius-link">°C</a>|<a
+            <a href="#" id="celcius-link" class="active">°C</a>|<a
               href="#"
               id="fahrenheit-link"
               >°F
             </a>
           </span>
           <br />
+          <p class="feelslike">Feels Like <span id="feels-like"></span></p>
+
           <span class="description"></span>
         </h1>
 
         <h4>
-          <span id="current-date">Date</span>
+          <span id="current-date"></span>
           <br />
-          <span id="city-display">Caledon, Canada</span>
+          <span id="city-display"></span>
         </h4>
       </div>
 
@@ -89,9 +91,7 @@
           <div class="carousel-item active">
             <div class="row current-extra">
               <div class="col-3">
-                <strong>Feels Like</strong><br /><span id="feels-like"
-                  >-8°C</span
-                >
+                <strong>Pressure</strong><br /><span id="pressure"></span>
               </div>
               <div class="col-3">
                 <strong>Wind</strong><br /><span id="wind-speed">28</span>

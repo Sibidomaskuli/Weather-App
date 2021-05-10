@@ -69,12 +69,12 @@ function displayForecastHTML() {
 
   let forecastHTML = `<div class="row">`;
 
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let days = ["Sun", "Mon", "Tue", "Wed"];
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
       `
-        <div class="col-2">
+        <div class="col-3">
             <span id="forecast-day">${day}</span>
             <br />
             <img
@@ -85,7 +85,7 @@ function displayForecastHTML() {
             />
             <br />
             <span id="forecastTempHigh">6°</span>
-            <span id="forecastTempLow"> 7°</span>
+            <span class="light" id="forecastTempLow"> 2°</span>
         </div>
       `;
   });

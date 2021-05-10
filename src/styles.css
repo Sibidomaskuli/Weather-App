@@ -15,7 +15,7 @@ div.current {
   text-align: center;
   /* margin: 20px 0 35px 0; */
 }
-img {
+#icon {
   position: relative;
   bottom: 26px;
 }
@@ -28,19 +28,12 @@ div.current h4 {
 div.current-extra {
   margin: 20px 0 20px 0;
   text-align: center;
+  font-size: 2rem;
 }
 div.current-extra strong {
   font-size: 20px;
 }
-div.forecast {
-  text-align: center;
-  line-height: 40px;
-  font-size: 22px;
-  /* padding: 15px 0 0 0; */
-}
-div.forecast strong {
-  font-size: 27px;
-}
+
 div.footer p {
   text-align: center;
   opacity: 0.7;
@@ -67,9 +60,18 @@ div.footer p {
   position: relative;
   bottom: 20px;
 }
-.fa-cloud {
-  opacity: 0.7;
+.weather-forecast {
+  text-align: center;
+  font-size: 2rem;
+  line-height: 8px;
+  /* padding: 15px 0 0 0; */
 }
+.forecastIcon {
+  position: relative;
+  right: 8px;
+  width: 4rem;
+}
+
 .temperature {
   font-size: 7rem;
   margin-right: 6px;

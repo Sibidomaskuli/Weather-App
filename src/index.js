@@ -47,7 +47,7 @@ function geolocationInput(event) {
 let geolocationButton = document.querySelector("#geolocation");
 geolocationButton.addEventListener("click", geolocationInput);
 
-// Timestamp
+// Timestamp conversion
 
 function formatHours(timestamp) {
   let time = new Date(timestamp);
@@ -60,6 +60,39 @@ function formatHours(timestamp) {
     minutes = `0${minutes}`;
   }
   return `${hours}:${minutes}`;
+}
+
+// Display forecast HTML
+
+function displayForecastHTML() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+        <div class="col-2">
+            <span id="forecast-day">${day}</span>
+            <br />
+            <img
+              src="http://openweathermap.org/img/wn/10d@2x.png"
+              alt="icon"
+              class="forecastIcon"
+              id="forecast-icon"
+            />
+            <br />
+            <span id="forecastTempHigh">6°</span>
+            <span id="forecastTempLow"> 7°</span>
+        </div>
+      `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
 }
 
 // Display the weather condions of city-input
@@ -84,7 +117,7 @@ function displayWeather(response) {
   feels = response.data.main.feels_like;
 
   let feelsLike = document.querySelector("#feels-like");
-  feelsLike.innerHTML = `${Math.round(feels)}`;
+  feelsLike.innerHTML = `${Math.round(feels)}°`;
 
   let windSpeed = document.querySelector("#wind-speed");
   windSpeed.innerHTML = `${Math.round(response.data.wind.speed * 3.6)}km/h`;
@@ -95,12 +128,12 @@ function displayWeather(response) {
   max = response.data.main.temp_max;
 
   let maxTemp = document.querySelector("#max-temp");
-  maxTemp.innerHTML = `${Math.round(max)}`;
+  maxTemp.innerHTML = `${Math.round(max)}°`;
 
   min = response.data.main.temp_min;
 
   let minTemp = document.querySelector("#min-temp");
-  minTemp.innerHTML = `${Math.round(response.data.main.temp_min)}`;
+  minTemp.innerHTML = `${Math.round(response.data.main.temp_min)}°`;
 
   let visibility = document.querySelector("#visibility");
   visibility.innerHTML = `${(response.data.visibility / 1000).toFixed(1)}km`;
@@ -123,6 +156,7 @@ function displayWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  displayForecastHTML();
 }
 
 // city on load

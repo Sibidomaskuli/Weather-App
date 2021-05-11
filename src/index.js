@@ -190,19 +190,19 @@ function displayFahrenheitTemp(event) {
   event.preventDefault();
   let fTemp = (celciusTemp * 9) / 5 + 32;
   let temperatureElement = document.querySelector(".temperature");
-  temperatureElement.innerHTML = Math.round(fTemp);
+  temperatureElement.innerHTML = `${Math.round(fTemp)}`;
 
   let feelsLikeTemp = (feels * 9) / 5 + 32;
   let feelsLikeElement = document.querySelector("#feels-like");
-  feelsLikeElement.innerHTML = Math.round(feelsLikeTemp);
+  feelsLikeElement.innerHTML = `${Math.round(feelsLikeTemp)}°`;
 
   let maxTemp = (max * 9) / 5 + 32;
   let maxElement = document.querySelector("#max-temp");
-  maxElement.innerHTML = Math.round(maxTemp);
+  maxElement.innerHTML = `${Math.round(maxTemp)}°`;
 
   let minTemp = (min * 9) / 5 + 32;
   let minElement = document.querySelector("#min-temp");
-  minElement.innerHTML = Math.round(minTemp);
+  minElement.innerHTML = `${Math.round(minTemp)}°`;
 
   // change the active class
   celciusLink.classList.remove("active");
@@ -214,13 +214,13 @@ function displayCelciusTemp(event) {
   temperatureElement.innerHTML = Math.round(celciusTemp);
 
   let feelsLikeElement = document.querySelector("#feels-like");
-  feelsLikeElement.innerHTML = Math.round(feels);
+  feelsLikeElement.innerHTML = `${Math.round(feels)}°`;
 
   let maxElement = document.querySelector("#max-temp");
-  maxElement.innerHTML = Math.round(max);
+  maxElement.innerHTML = `${Math.round(max)}°`;
 
   let minElement = document.querySelector("#min-temp");
-  minElement.innerHTML = Math.round(min);
+  minElement.innerHTML = `${Math.round(min)}°`;
 
   // change the active class
   celciusLink.classList.add("active");

@@ -62,10 +62,13 @@ function formatHours(timestamp) {
   return `${hours}:${minutes}`;
 }
 
+// Forecast API
+
 // Display forecast HTML
 
-function displayForecastHTML() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
+  console.log(response.data.daily);
 
   let forecastHTML = `<div class="row">`;
 
@@ -75,7 +78,7 @@ function displayForecastHTML() {
       forecastHTML +
       `
         <div class="col-3">
-            <span id="forecast-day">${day}</span>
+            <span id="forecast-day"><strong>${day}</strong></span>
             <br />
             <img
               src="http://openweathermap.org/img/wn/10d@2x.png"
@@ -84,8 +87,8 @@ function displayForecastHTML() {
               id="forecast-icon"
             />
             <br />
-            <span id="forecastTempHigh">6°</span>
-            <span class="light" id="forecastTempLow"> 2°</span>
+            <span id="forecastTempHigh"><strong>6°</strong></span>
+            <span class="light" id="forecastTempLow"> <strong>2°</strong></span>
         </div>
       `;
   });
@@ -94,11 +97,19 @@ function displayForecastHTML() {
 
   forecastElement.innerHTML = forecastHTML;
 }
+// Forecast API
+function getForecast(coord) {
+  let apiKey = "fc0a1c92e0473f3c314dae218cdd219d";
+  apiEndPoint = `https://api.openweathermap.org/data/2.5/onecall`;
+  let unit = "metric";
+  let apiUrl = `${apiEndPoint}?lat=${coord.lat}&lon=${coord.lon}&appid=${apiKey}&units=${unit}`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
 // Display the weather condions of city-input
 
 function displayWeather(response) {
-  console.log(response.data);
+  console.log(response);
 
   celciusTemp = response.data.main.temp;
 
@@ -156,7 +167,7 @@ function displayWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  displayForecastHTML();
+  getForecast(response.data.coord);
 }
 
 // city on load

@@ -1,4 +1,5 @@
 body {
+  color: #48484a;
   margin: 70px auto;
   max-width: 500px;
   font-family: "Rajdhani";
@@ -53,7 +54,6 @@ div.footer p {
   font-size: 26px;
 }
 .description {
-  color: #48484a;
   text-transform: capitalize;
   font-size: 26px;
   font-weight: 800;

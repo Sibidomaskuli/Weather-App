@@ -7,7 +7,6 @@ body {
 }
 div.container {
   max-width: 500px;
-  border: solid 1px none;
   border-radius: 10px;
   padding-top: 30px;
   padding-bottom: 1px;
@@ -20,21 +19,12 @@ div.wrapper {
 }
 div.current {
   text-align: center;
-  /* margin: 20px 0 35px 0; */
-}
-#icon {
-  position: relative;
-  bottom: 26px;
-  width: 9rem;
-}
-div.current h1 {
   margin-top: 20px;
 }
 div.current h4 {
   line-height: 40px;
 }
 div.current-extra {
-  margin: 20px 0 20px 0;
   text-align: center;
   font-size: 22px;
 }
@@ -45,9 +35,13 @@ div.current-extra strong {
 div.footer p {
   text-align: center;
   opacity: 0.7;
-  /* margin: 25px 0 -30px 0; */
 }
 
+#icon {
+  position: relative;
+  bottom: 26px;
+  width: 9rem;
+}
 #city-display {
   font-size: 38px;
 }
@@ -65,17 +59,14 @@ div.footer p {
 .weather-forecast {
   text-align: center;
   font-size: 22px;
-  line-height: 8px;
-  /* padding: 15px 0 0 0; */
+  line-height: 15px;
+  margin: 30px 0 30px 0;
 }
 .forecastIcon {
   width: 4rem;
 }
-
 .temperature {
   font-size: 7rem;
-  margin-right: 6px;
-  text-transform: capitalize;
 }
 .light {
   opacity: 0.7;

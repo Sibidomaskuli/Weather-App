@@ -23,6 +23,9 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 let currentDate = `${day} ${hour}:${minutes}`;
+if (hour < 4 || hour > 21) {
+  document.querySelector("#stars").classList.add("stars");
+}
 
 date.innerHTML = currentDate;
 
@@ -75,6 +78,7 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
   let forecast = response.data.daily;
+  console.log(forecast);
 
   let forecastElement = document.querySelector("#forecast");
 
@@ -89,6 +93,8 @@ function displayForecast(response) {
             <span id="forecast-day"><strong>${formatDay(
               forecastDay.dt
             )}</strong></span>
+            <br />
+            <span>${forecastDay.weather[0].main}</span>
             <br />
             <img
               src="http://openweathermap.org/img/wn/${

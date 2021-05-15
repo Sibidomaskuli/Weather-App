@@ -1,22 +1,50 @@
 body {
   color: #48484a;
+  color: #fff;
   margin: 70px auto;
   max-width: 500px;
   font-family: "Rajdhani";
-  background-color: #b9e3f7;
+}
+.rain {
 }
 div.container {
   max-width: 500px;
   border-radius: 10px;
   padding-top: 30px;
   padding-bottom: 1px;
-  background: linear-gradient(to bottom, #fff1eb 0%, #ace0f9 100%);
+  background: linear-gradient(to top, #2c2f31, #212c3a);
+  /* background: linear-gradient(to bottom, #fff1eb 0%, #ace0f9 100%);
+  background: linear-gradient(-20deg, #f794a4 0%, #fdd6bd 100%);
+  background: linear-gradient(
+    to top,
+    rgb(0, 0, 0) 11.2%,
+    rgb(11, 132, 145) 91.1%
+  );
+  background: linear-gradient(
+    108.1deg,
+    rgb(167, 220, 225) 11.2%,
+    rgb(217, 239, 242) 88.9%
+  );
+  background: rgb(255, 154, 158);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 154, 158, 1) 0%,
+    rgba(250, 208, 196, 1) 100%
+  ); */
 }
-div.wrapper {
-  background-color: #fff;
-  padding: 20px 20px 20px 20px;
-  border-radius: 10px;
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: url(../images/stars-background.png) repeat top center;
+  z-index: 0;
 }
+
 div.current {
   text-align: center;
   margin-top: 20px;
@@ -26,14 +54,13 @@ div.current h4 {
 }
 div.current-extra {
   text-align: center;
-  font-size: 22px;
-}
-div.current-extra strong {
-  font-size: 22px;
+  font-size: 1.3rem;
 }
 
 div.footer p {
   text-align: center;
+  color: #48484a;
+
   opacity: 0.7;
 }
 
@@ -45,8 +72,8 @@ div.footer p {
 #city-display {
   font-size: 38px;
 }
+
 .feelslike {
-  color: #48484a;
   font-size: 26px;
 }
 .description {
@@ -59,7 +86,7 @@ div.footer p {
 .weather-forecast {
   text-align: center;
   font-size: 22px;
-  line-height: 15px;
+  line-height: 25px;
   margin: 30px 0 30px 0;
 }
 .forecastIcon {
@@ -76,6 +103,6 @@ div.footer p {
   position: relative;
   bottom: 49px;
   right: 15px;
-  color: #48484a;
+
   font-weight: 800;
 }

@@ -23,8 +23,8 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 let currentDate = `${day} ${hour}:${minutes}`;
-if (hour < 4 || hour > 15) {
-  // document.querySelector("#stars").classList.add("stars");
+if (hour < 4 || hour > 21) {
+  document.querySelector("#stars").classList.add("stars");
   document.querySelector(".container").classList.add("nightBackground");
 } else {
   document.querySelector(".container").classList.add("dayBackground");

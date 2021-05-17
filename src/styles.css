@@ -11,8 +11,12 @@ div.container {
 }
 
 .dayBackground {
-  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
-  color: #48484a;
+  background: linear-gradient(
+    0deg,
+    rgba(115, 186, 225, 1) 13%,
+    rgba(85, 166, 220, 1) 81%
+  );
+  color: #fff;
 }
 .nightBackground {
   background: linear-gradient(to top, #2c2f31, #212c3a);
@@ -72,11 +76,15 @@ div.footer p {
 .weather-forecast {
   text-align: center;
   font-size: 22px;
-  line-height: 25px;
+  line-height: 30px;
   margin: 30px 0 30px 0;
 }
 .forecastIcon {
   width: 4rem;
+}
+.forecastDescription {
+  color: #48484a;
+  font-weight: 700;
 }
 .temperature {
   font-size: 7rem;
@@ -89,6 +97,5 @@ div.footer p {
   position: relative;
   bottom: 49px;
   right: 15px;
-
   font-weight: 800;
 }

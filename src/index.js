@@ -23,8 +23,8 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 let currentDate = `${day} ${hour}:${minutes}`;
-if (hour < 4 || hour > 21) {
-  document.querySelector("#stars").classList.add("stars");
+if (hour < 4 || hour > 15) {
+  // document.querySelector("#stars").classList.add("stars");
   document.querySelector(".container").classList.add("nightBackground");
 } else {
   document.querySelector(".container").classList.add("dayBackground");
@@ -80,7 +80,6 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
   let forecast = response.data.daily;
-  console.log(forecast);
 
   let forecastElement = document.querySelector("#forecast");
 
@@ -96,16 +95,18 @@ function displayForecast(response) {
               forecastDay.dt
             )}</strong></span>
             <br />
-            <span>${forecastDay.weather[0].main}</span>
-            <br />
             <img
-              src="http://openweathermap.org/img/wn/${
-                forecastDay.weather[0].icon
-              }@2x.png"
-              alt="icon"
-              class="forecastIcon"
-              id="forecast-icon"
+            src="http://openweathermap.org/img/wn/${
+              forecastDay.weather[0].icon
+            }@2x.png"
+            alt="icon"
+            class="forecastIcon"
+            id="forecast-icon"
             />
+            <br />
+            <span class="forecastDescription">${
+              forecastDay.weather[0].main
+            }</span>
             <br />
             <span id="forecastTempHigh"><strong>${Math.round(
               forecastDay.temp.max

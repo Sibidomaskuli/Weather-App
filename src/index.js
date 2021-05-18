@@ -29,6 +29,7 @@ if (hour < 4 || hour > 21) {
   document.body.style.background = `black`;
 } else {
   document.querySelector(".container").classList.add("dayBackground");
+  document.body.style.backgroundImage = `url("images/a.jpg")`;
 }
 date.innerHTML = currentDate;
 

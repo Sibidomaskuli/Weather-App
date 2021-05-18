@@ -23,8 +23,6 @@ div.current-extra {
 }
 div.footer p {
   text-align: center;
-  color: #48484a;
-  font-weight: 800;
 }
 
 #search-form {
@@ -76,11 +74,7 @@ div.footer p {
 }
 
 .dayBackground {
-  background: linear-gradient(
-    0deg,
-    rgba(115, 186, 225, 1) 13%,
-    rgba(85, 166, 220, 1) 81%
-  );
+  background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
   color: #fff;
 }
 .nightBackground {

@@ -26,6 +26,7 @@ let currentDate = `${day} ${hour}:${minutes}`;
 if (hour < 4 || hour > 21) {
   document.querySelector("#stars").classList.add("stars");
   document.querySelector(".container").classList.add("nightBackground");
+  document.body.style.background = `black`;
 } else {
   document.querySelector(".container").classList.add("dayBackground");
 }

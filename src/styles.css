@@ -21,8 +21,9 @@ div.current-extra {
   text-align: center;
   font-size: 1.3rem;
 }
-div.footer p {
+div.footer {
   text-align: center;
+  position: relative;
 }
 
 #search-form {
@@ -78,7 +79,7 @@ div.footer p {
   color: #fff;
 }
 .nightBackground {
-  background: linear-gradient(to top, #2c2f31, #212c3a);
+  background: linear-gradient(to top, #2c3135, #212c3a);
   color: #fff;
 }
 
